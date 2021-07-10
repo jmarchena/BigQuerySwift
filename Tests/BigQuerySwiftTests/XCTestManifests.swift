@@ -11,10 +11,10 @@ extension BigQuerySwiftTests {
     ]
 }
 
-#if !os(macOS)
-public func __allTests() -> [XCTestCaseEntry] {
-    return [
-        testCase(BigQuerySwiftTests.__allTests),
-    ]
-}
-#endif
+//#if !os(macOS)
+//public func __allTests() -> [XCTestCaseEntry] {
+//    return [
+//        testCase(BigQuerySwiftTests.__allTests),
+//    ]
+//}
+//#endif

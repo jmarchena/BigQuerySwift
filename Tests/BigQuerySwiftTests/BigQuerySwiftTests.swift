@@ -28,16 +28,16 @@ final class BigQuerySwiftTests: XCTestCase {
     ]
 
     private class MockClient: HTTPClient {
-        private let response: (Data?, HTTPURLResponse?, Error?)
+        private let response: (Data?, Error?)
         var calls: [(url: String, payload: Data, headers: [String : String])] = []
-        init(response: (Data?, HTTPURLResponse?, Error?)) {
+        init(response: (Data?, Error?)) {
             self.response = response
         }
 
         func post(url: String, payload: Data, headers: [String : String],
-                  completionHandler: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) {
+                  completionHandler: @escaping (Data?, Error?) -> Void) {
             calls.append((url: url, payload: payload, headers: headers))
-            completionHandler(response.0, response.1, response.2)
+            completionHandler(response.0, response.1)
         }
     }
 
@@ -79,7 +79,7 @@ final class BigQuerySwiftTests: XCTestCase {
             projectID: projectID,
             datasetID: datasetID,
             tableName: tableName,
-            client: MockClient(response: (data, nil, nil))
+            client: MockClient(response: (data, nil))
         )
         try! client.insert(rows: rows) { response in
             guard case let .success(r) = response else {
@@ -91,7 +91,7 @@ final class BigQuerySwiftTests: XCTestCase {
     }
 
     func testInsertSetsUpRequestCorrectly() {
-        let httpClient = MockClient(response: (nil, nil, TestError.test))
+        let httpClient = MockClient(response: (nil, TestError.test))
         let expectedUrl = "https://www.googleapis.com/bigquery/v2/projects/id-1234/datasets/dataset_name/tables/table_name/insertAll"
         let expectedHeaders = ["Authorization": "Bearer " + authenticationToken]
         let client = BigQueryClient<TestRow>(
@@ -117,7 +117,7 @@ final class BigQuerySwiftTests: XCTestCase {
             projectID: projectID,
             datasetID: datasetID,
             tableName: tableName,
-            client: MockClient(response: (nil, nil, expected))
+            client: MockClient(response: (nil, expected))
         )
         try! client.insert(rows: rows) { response in
             guard case let .failure(e) = response else {
@@ -252,7 +252,7 @@ final class BigQuerySwiftTests: XCTestCase {
             projectID: projectID,
             datasetID: datasetID,
             tableName: tableName,
-            client: MockClient(response: (data, nil, nil))
+            client: MockClient(response: (data, nil))
         )
         try! client.query(query) { (response: QueryCallResponse<RowOfStrings>) in
             guard case let .queryResponse(r) = response else {
@@ -276,7 +276,7 @@ final class BigQuerySwiftTests: XCTestCase {
             projectID: projectID,
             datasetID: datasetID,
             tableName: tableName,
-            client: MockClient(response: (data, nil, nil))
+            client: MockClient(response: (data, nil))
         )
         try! client.query(query) { (response: QueryCallResponse<TestRow>) in
             guard case let .error(e) = response else {
@@ -297,7 +297,7 @@ final class BigQuerySwiftTests: XCTestCase {
             projectID: projectID,
             datasetID: datasetID,
             tableName: tableName,
-            client: MockClient(response: (nil, nil, expected))
+            client: MockClient(response: (nil, expected))
         )
         try! client.query("") { (response: QueryCallResponse<RowOfStrings>) in
             guard case let .error(e) = response else {

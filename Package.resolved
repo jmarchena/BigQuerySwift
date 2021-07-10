@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "Auth",
-        "repositoryURL": "https://github.com/saga-dash/auth-library-swift.git",
+        "package": "async-http-client",
+        "repositoryURL": "https://github.com/swift-server/async-http-client.git",
         "state": {
-          "branch": "master",
-          "revision": "26afd1ad24463fa22168ae9e6c25df3bd9b42884",
-          "version": null
+          "branch": null,
+          "revision": "037b70291941fe43de668066eb6fb802c5e181d2",
+          "version": "1.1.1"
         }
       },
       {
@@ -15,17 +15,17 @@
         "repositoryURL": "https://github.com/attaswift/BigInt",
         "state": {
           "branch": null,
-          "revision": "018a5925f60f9e0523edd261de394a0898fe95b7",
-          "version": "3.1.0"
+          "revision": "889a1ecacd73ccc189c5cb29288048f186c44ed9",
+          "version": "5.2.1"
         }
       },
       {
         "package": "CircuitBreaker",
-        "repositoryURL": "https://github.com/IBM-Swift/CircuitBreaker.git",
+        "repositoryURL": "https://github.com/Kitura/CircuitBreaker.git",
         "state": {
           "branch": null,
-          "revision": "81581e3fb094ab4879aa2c5ce54201f1dbce0a7f",
-          "version": "5.0.1"
+          "revision": "915cd4ed17500784cf5bcbf2ef54a76830884c86",
+          "version": "5.0.200"
         }
       },
       {
@@ -33,44 +33,71 @@
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
           "branch": null,
-          "revision": "874280173e082cdd7ac6602be235914efe3f4dbc",
-          "version": "0.13.0"
+          "revision": "af1b58fc569bfde777462349b9f7314b61762be0",
+          "version": "1.3.2"
+        }
+      },
+      {
+        "package": "google-auth-library-swift",
+        "repositoryURL": "https://github.com/googleapis/google-auth-library-swift",
+        "state": {
+          "branch": null,
+          "revision": "4b510d91fc74f1415eae6dabc9836b8c3e1f44f6",
+          "version": "0.5.3"
         }
       },
       {
         "package": "LoggerAPI",
-        "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
+        "repositoryURL": "https://github.com/Kitura/LoggerAPI.git",
         "state": {
           "branch": null,
-          "revision": "5041f2673aa75d6e973d9b6bd3956bc5068387c8",
-          "version": "1.7.3"
+          "revision": "e82d34eab3f0b05391082b11ea07d3b70d2f65bb",
+          "version": "1.9.200"
         }
       },
       {
-        "package": "SipHash",
-        "repositoryURL": "https://github.com/attaswift/SipHash",
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log.git",
         "state": {
           "branch": null,
-          "revision": "e325083424688055363bbfcb7f1a440d7d7a1bae",
-          "version": "1.2.2"
+          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+          "version": "1.4.2"
         }
       },
       {
-        "package": "SwiftyBase64",
-        "repositoryURL": "https://github.com/timburks/SwiftyBase64",
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "01f2f5c4886d0b8d7cb8c0e96b2aefccd1c7ccd8",
-          "version": "1.2.0"
+          "revision": "d79e33308b0ac83326b0ead0ea6446e604b8162d",
+          "version": "2.30.0"
+        }
+      },
+      {
+        "package": "swift-nio-extras",
+        "repositoryURL": "https://github.com/apple/swift-nio-extras.git",
+        "state": {
+          "branch": null,
+          "revision": "f72c4688f89c28502105509186eadc49a49cb922",
+          "version": "1.10.0"
+        }
+      },
+      {
+        "package": "swift-nio-ssl",
+        "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
+        "state": {
+          "branch": null,
+          "revision": "9db7cee4b62c39160a6bd513a47a1ecdcceac18a",
+          "version": "2.14.0"
         }
       },
       {
         "package": "SwiftyRequest",
-        "repositoryURL": "https://github.com/IBM-Swift/SwiftyRequest.git",
+        "repositoryURL": "https://github.com/Kitura/SwiftyRequest",
         "state": {
           "branch": null,
-          "revision": "617de05a8bea00acf0c1fd68fd8c42aa7a42c036",
-          "version": "1.1.3"
+          "revision": "2c543777a5088bed811503a68551a4b4eceac198",
+          "version": "3.2.200"
         }
       }
     ]

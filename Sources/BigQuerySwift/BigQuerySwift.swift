@@ -219,7 +219,7 @@ public struct BigQueryClient<T : Encodable> {
             url: insertUrl,
             payload: data,
             headers: ["Authorization": "Bearer " + authenticationToken]
-        ) { (body, response, error) in
+        ) { (body, error) in
             if let error = error {
                 completionHandler(.failure(error))
                 return
@@ -246,7 +246,7 @@ public struct BigQueryClient<T : Encodable> {
             url: queryUrl,
             payload: data,
             headers: ["Authorization": "Bearer " + authenticationToken]
-        ) { (body, response, error) in
+        ) { (body, error) in
             if let error = error {
                 completionHandler(.error(error))
                 return
