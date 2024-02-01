@@ -12,7 +12,7 @@ A [BigQuery](https://cloud.google.com/bigquery/) client for Swift.
 Add this to your Package.swift:
 
 ```swift
-.package(url: "https://github.com/oliveroneill/BigQuerySwift.git", .upToNextMajor(from: "0.0.1")),
+.package(url: "https://github.com/jmarchena/BigQuerySwift.git", .upToNextMajor(from: "0.0.1")),
 ```
 
 ## Usage
