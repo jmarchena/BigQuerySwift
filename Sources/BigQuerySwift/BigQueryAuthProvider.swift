@@ -11,6 +11,10 @@ public enum AuthResponse {
     case error(Error)
 }
 
+public enum AuthError: Error {
+    case noToken
+}
+
 /// Handles authenticating a service account
 public struct BigQueryAuthProvider {
     /// Set scope to be BigQuery
@@ -43,7 +47,10 @@ public struct BigQueryAuthProvider {
         // Request token
         try tokenProvider.withToken { (token, error) in
             if let token = token {
-                completionHandler(.token(token.AccessToken!))
+                guard let accessToken = token.accessToken else {
+                    completionHandler(.error(AuthError.noToken))
+                }
+                completionHandler(.token(accessToken))
             } else {
                 completionHandler(.error(error!))
             }
