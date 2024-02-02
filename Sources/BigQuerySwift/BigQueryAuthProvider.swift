@@ -49,6 +49,7 @@ public struct BigQueryAuthProvider {
             if let token = token {
                 guard let accessToken = token.AccessToken else {
                     completionHandler(.error(AuthError.noToken))
+                    return
                 }
                 completionHandler(.token(accessToken))
             } else {
