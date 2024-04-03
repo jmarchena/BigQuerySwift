@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Kitura/SwiftyRequest", from: "3.1.0"),
-        .package(name: "Auth", url: "https://github.com/googleapis/google-auth-library-swift", from: "0.5.3"),
+        .package(name: "Auth", url: "https://github.com/jmarchena/google-auth-library-swift.git", .branch("main")),
     ],
     targets: [
         .target(
